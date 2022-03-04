@@ -59,18 +59,20 @@ This app offers a way for people to create large bulk orders of drinks at bars a
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* [Login/Signup]
+* [Home Screen with nav controller]
+* [Shareable Social Media Links]
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* [Login/SignUp]
+   * [If user does not have an account then create account screen will pop up.]
+   * [If user already has an account they will be directed to the home screen]
+* [Home screen with navigation controller]
+   * [Social media screen that has links to the users social media profiles they wish to share]
+   * [Clink Host or clink option]
+   * [Clink host will allow you to collect all other's in your party drink order]
+   * [Clink will allow you to share your drink order with the host]
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
