@@ -79,6 +79,7 @@ This app offers a way for people to create large bulk orders of drinks at bars a
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
+https://www.fluidui.com/editor/live/preview/cF9LeHZWcmtWdVdndTJ3Slc5V3Y3REhsaUlvZDlvRlJyMA==
 
 ### [BONUS] Interactive Prototype
 
