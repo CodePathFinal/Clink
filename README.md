@@ -48,12 +48,24 @@ This app offers a way for people to create large bulk orders of drinks at bars a
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* [Login screen]
+   * User creates a login or logs into their account.
+   * On this screen the user has the option to log into their profile
+   * or create a new profile
+* [Home Screen]
+   * User has a home screen with a list of menu items
+   * The user may select to review social media profiles
+   * or user may select the clink option
+* [Social Media Linking screen]
+   * Allows user to link their social media profile.
+   * User will be able to link a Facebook, Instagram or 
+   * Twitter profile.
+* [Clink screen]
+   * User will have option to group an entire party's order
+   * as the host. 
+   * They will also have another option to select guest.
+   * This is option will add their drink order
+   * to the person that is the host.
 
 ### 3. Navigation
 
