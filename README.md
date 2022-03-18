@@ -87,10 +87,11 @@ This app offers a way for people to create large bulk orders of drinks at bars a
    * [Clink will allow you to share your drink order with the host]
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://i.imgur.com/tOAYgDv.jpg" width=800><br>
+
 
 ### [BONUS] Digital Wireframes & Mockups
+![](https://i.imgur.com/xhPBhH2.png)
 https://www.fluidui.com/editor/live/preview/cF9LeHZWcmtWdVdndTJ3Slc5V3Y3REhsaUlvZDlvRlJyMA==
 
 ### [BONUS] Interactive Prototype
