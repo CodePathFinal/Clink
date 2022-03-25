@@ -1,0 +1,775 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		045EFA2727ED2F5A0085E882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EFA2627ED2F5A0085E882 /* AppDelegate.swift */; };
+		045EFA2927ED2F5A0085E882 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EFA2827ED2F5A0085E882 /* SceneDelegate.swift */; };
+		045EFA2B27ED2F5A0085E882 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EFA2A27ED2F5A0085E882 /* SignInViewController.swift */; };
+		045EFA2E27ED2F5A0085E882 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045EFA2C27ED2F5A0085E882 /* Main.storyboard */; };
+		045EFA3027ED2F5C0085E882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EFA2F27ED2F5C0085E882 /* Assets.xcassets */; };
+		045EFA3327ED2F5C0085E882 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045EFA3127ED2F5C0085E882 /* LaunchScreen.storyboard */; };
+		045EFA3E27ED2F5C0085E882 /* ClinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EFA3D27ED2F5C0085E882 /* ClinkTests.swift */; };
+		045EFA4827ED2F5C0085E882 /* ClinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EFA4727ED2F5C0085E882 /* ClinkUITests.swift */; };
+		045EFA4A27ED2F5C0085E882 /* ClinkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EFA4927ED2F5C0085E882 /* ClinkUITestsLaunchTests.swift */; };
+		045EFA5727ED3B090085E882 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EFA5627ED3B090085E882 /* HomeViewController.swift */; };
+		045EFA5927ED4CB80085E882 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EFA5827ED4CB80085E882 /* SignUpViewController.swift */; };
+		04B9902E27ED6F9F009AB1A0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9902D27ED6F9F009AB1A0 /* SettingsViewController.swift */; };
+		5739CE8EDA560B991F7FB49D /* Pods_ClinkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A58F1CF4BC8B9B5E7EAC3800 /* Pods_ClinkTests.framework */; };
+		A5171FADDA12DBEDED17794B /* Pods_Clink_ClinkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09ECEA2E55819D10FE0D849 /* Pods_Clink_ClinkUITests.framework */; };
+		BB6787C8C7CB416831A7B263 /* Pods_Clink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251089172E95E9322240EFC1 /* Pods_Clink.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		045EFA3A27ED2F5C0085E882 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 045EFA1B27ED2F5A0085E882 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 045EFA2227ED2F5A0085E882;
+			remoteInfo = Clink;
+		};
+		045EFA4427ED2F5C0085E882 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 045EFA1B27ED2F5A0085E882 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 045EFA2227ED2F5A0085E882;
+			remoteInfo = Clink;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		045EFA2327ED2F5A0085E882 /* Clink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		045EFA2627ED2F5A0085E882 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		045EFA2827ED2F5A0085E882 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		045EFA2A27ED2F5A0085E882 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		045EFA2D27ED2F5A0085E882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		045EFA2F27ED2F5C0085E882 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		045EFA3227ED2F5C0085E882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		045EFA3427ED2F5C0085E882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		045EFA3927ED2F5C0085E882 /* ClinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		045EFA3D27ED2F5C0085E882 /* ClinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinkTests.swift; sourceTree = "<group>"; };
+		045EFA4327ED2F5C0085E882 /* ClinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClinkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		045EFA4727ED2F5C0085E882 /* ClinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinkUITests.swift; sourceTree = "<group>"; };
+		045EFA4927ED2F5C0085E882 /* ClinkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		045EFA5627ED3B090085E882 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		045EFA5827ED4CB80085E882 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		04B9902D27ED6F9F009AB1A0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		05A24D6BDBAC18B2E0133B0F /* Pods-Clink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clink.release.xcconfig"; path = "Target Support Files/Pods-Clink/Pods-Clink.release.xcconfig"; sourceTree = "<group>"; };
+		0E090F3C6C04CA9F0B90685F /* Pods-ClinkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClinkTests.release.xcconfig"; path = "Target Support Files/Pods-ClinkTests/Pods-ClinkTests.release.xcconfig"; sourceTree = "<group>"; };
+		251089172E95E9322240EFC1 /* Pods_Clink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		313F09979A50E2C74627F84F /* Pods-ClinkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClinkTests.debug.xcconfig"; path = "Target Support Files/Pods-ClinkTests/Pods-ClinkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		69575ABF6B03BE61FDD29D2F /* Pods-Clink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clink.debug.xcconfig"; path = "Target Support Files/Pods-Clink/Pods-Clink.debug.xcconfig"; sourceTree = "<group>"; };
+		A09ECEA2E55819D10FE0D849 /* Pods_Clink_ClinkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clink_ClinkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A58F1CF4BC8B9B5E7EAC3800 /* Pods_ClinkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClinkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B88745628B29ADB8596249C2 /* Pods-Clink-ClinkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clink-ClinkUITests.release.xcconfig"; path = "Target Support Files/Pods-Clink-ClinkUITests/Pods-Clink-ClinkUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EC31C3015991806F733D856A /* Pods-Clink-ClinkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clink-ClinkUITests.debug.xcconfig"; path = "Target Support Files/Pods-Clink-ClinkUITests/Pods-Clink-ClinkUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		045EFA2027ED2F5A0085E882 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB6787C8C7CB416831A7B263 /* Pods_Clink.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		045EFA3627ED2F5C0085E882 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5739CE8EDA560B991F7FB49D /* Pods_ClinkTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		045EFA4027ED2F5C0085E882 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5171FADDA12DBEDED17794B /* Pods_Clink_ClinkUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		045EFA1A27ED2F5A0085E882 = {
+			isa = PBXGroup;
+			children = (
+				045EFA2527ED2F5A0085E882 /* Clink */,
+				045EFA3C27ED2F5C0085E882 /* ClinkTests */,
+				045EFA4627ED2F5C0085E882 /* ClinkUITests */,
+				045EFA2427ED2F5A0085E882 /* Products */,
+				1A099591E736C8EFCCB68E10 /* Pods */,
+				8F2C43FF74FE8B4FEE8F18C1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		045EFA2427ED2F5A0085E882 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				045EFA2327ED2F5A0085E882 /* Clink.app */,
+				045EFA3927ED2F5C0085E882 /* ClinkTests.xctest */,
+				045EFA4327ED2F5C0085E882 /* ClinkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		045EFA2527ED2F5A0085E882 /* Clink */ = {
+			isa = PBXGroup;
+			children = (
+				045EFA2627ED2F5A0085E882 /* AppDelegate.swift */,
+				045EFA2827ED2F5A0085E882 /* SceneDelegate.swift */,
+				045EFA5827ED4CB80085E882 /* SignUpViewController.swift */,
+				045EFA2A27ED2F5A0085E882 /* SignInViewController.swift */,
+				045EFA5627ED3B090085E882 /* HomeViewController.swift */,
+				04B9902D27ED6F9F009AB1A0 /* SettingsViewController.swift */,
+				045EFA2C27ED2F5A0085E882 /* Main.storyboard */,
+				045EFA2F27ED2F5C0085E882 /* Assets.xcassets */,
+				045EFA3127ED2F5C0085E882 /* LaunchScreen.storyboard */,
+				045EFA3427ED2F5C0085E882 /* Info.plist */,
+			);
+			path = Clink;
+			sourceTree = "<group>";
+		};
+		045EFA3C27ED2F5C0085E882 /* ClinkTests */ = {
+			isa = PBXGroup;
+			children = (
+				045EFA3D27ED2F5C0085E882 /* ClinkTests.swift */,
+			);
+			path = ClinkTests;
+			sourceTree = "<group>";
+		};
+		045EFA4627ED2F5C0085E882 /* ClinkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				045EFA4727ED2F5C0085E882 /* ClinkUITests.swift */,
+				045EFA4927ED2F5C0085E882 /* ClinkUITestsLaunchTests.swift */,
+			);
+			path = ClinkUITests;
+			sourceTree = "<group>";
+		};
+		1A099591E736C8EFCCB68E10 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				69575ABF6B03BE61FDD29D2F /* Pods-Clink.debug.xcconfig */,
+				05A24D6BDBAC18B2E0133B0F /* Pods-Clink.release.xcconfig */,
+				EC31C3015991806F733D856A /* Pods-Clink-ClinkUITests.debug.xcconfig */,
+				B88745628B29ADB8596249C2 /* Pods-Clink-ClinkUITests.release.xcconfig */,
+				313F09979A50E2C74627F84F /* Pods-ClinkTests.debug.xcconfig */,
+				0E090F3C6C04CA9F0B90685F /* Pods-ClinkTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8F2C43FF74FE8B4FEE8F18C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				251089172E95E9322240EFC1 /* Pods_Clink.framework */,
+				A09ECEA2E55819D10FE0D849 /* Pods_Clink_ClinkUITests.framework */,
+				A58F1CF4BC8B9B5E7EAC3800 /* Pods_ClinkTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		045EFA2227ED2F5A0085E882 /* Clink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 045EFA4D27ED2F5C0085E882 /* Build configuration list for PBXNativeTarget "Clink" */;
+			buildPhases = (
+				B8635F94A94D36845DF873E7 /* [CP] Check Pods Manifest.lock */,
+				045EFA1F27ED2F5A0085E882 /* Sources */,
+				045EFA2027ED2F5A0085E882 /* Frameworks */,
+				045EFA2127ED2F5A0085E882 /* Resources */,
+				41E5AE8B3871B93D4E2196C1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Clink;
+			productName = Clink;
+			productReference = 045EFA2327ED2F5A0085E882 /* Clink.app */;
+			productType = "com.apple.product-type.application";
+		};
+		045EFA3827ED2F5C0085E882 /* ClinkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 045EFA5027ED2F5C0085E882 /* Build configuration list for PBXNativeTarget "ClinkTests" */;
+			buildPhases = (
+				C9CFCB271FFB11BB87E9D3AF /* [CP] Check Pods Manifest.lock */,
+				045EFA3527ED2F5C0085E882 /* Sources */,
+				045EFA3627ED2F5C0085E882 /* Frameworks */,
+				045EFA3727ED2F5C0085E882 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				045EFA3B27ED2F5C0085E882 /* PBXTargetDependency */,
+			);
+			name = ClinkTests;
+			productName = ClinkTests;
+			productReference = 045EFA3927ED2F5C0085E882 /* ClinkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		045EFA4227ED2F5C0085E882 /* ClinkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 045EFA5327ED2F5C0085E882 /* Build configuration list for PBXNativeTarget "ClinkUITests" */;
+			buildPhases = (
+				1B65DE64A6D98AF949CC6C13 /* [CP] Check Pods Manifest.lock */,
+				045EFA3F27ED2F5C0085E882 /* Sources */,
+				045EFA4027ED2F5C0085E882 /* Frameworks */,
+				045EFA4127ED2F5C0085E882 /* Resources */,
+				87565CBD9E9DD5BF51445FDB /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				045EFA4527ED2F5C0085E882 /* PBXTargetDependency */,
+			);
+			name = ClinkUITests;
+			productName = ClinkUITests;
+			productReference = 045EFA4327ED2F5C0085E882 /* ClinkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		045EFA1B27ED2F5A0085E882 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					045EFA2227ED2F5A0085E882 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					045EFA3827ED2F5C0085E882 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 045EFA2227ED2F5A0085E882;
+					};
+					045EFA4227ED2F5C0085E882 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 045EFA2227ED2F5A0085E882;
+					};
+				};
+			};
+			buildConfigurationList = 045EFA1E27ED2F5A0085E882 /* Build configuration list for PBXProject "Clink" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 045EFA1A27ED2F5A0085E882;
+			productRefGroup = 045EFA2427ED2F5A0085E882 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				045EFA2227ED2F5A0085E882 /* Clink */,
+				045EFA3827ED2F5C0085E882 /* ClinkTests */,
+				045EFA4227ED2F5C0085E882 /* ClinkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		045EFA2127ED2F5A0085E882 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				045EFA3327ED2F5C0085E882 /* LaunchScreen.storyboard in Resources */,
+				045EFA3027ED2F5C0085E882 /* Assets.xcassets in Resources */,
+				045EFA2E27ED2F5A0085E882 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		045EFA3727ED2F5C0085E882 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		045EFA4127ED2F5C0085E882 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B65DE64A6D98AF949CC6C13 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Clink-ClinkUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41E5AE8B3871B93D4E2196C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Clink/Pods-Clink-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Clink/Pods-Clink-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Clink/Pods-Clink-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87565CBD9E9DD5BF51445FDB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Clink-ClinkUITests/Pods-Clink-ClinkUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Clink-ClinkUITests/Pods-Clink-ClinkUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Clink-ClinkUITests/Pods-Clink-ClinkUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8635F94A94D36845DF873E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Clink-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9CFCB271FFB11BB87E9D3AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ClinkTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		045EFA1F27ED2F5A0085E882 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				045EFA2B27ED2F5A0085E882 /* SignInViewController.swift in Sources */,
+				045EFA2727ED2F5A0085E882 /* AppDelegate.swift in Sources */,
+				045EFA2927ED2F5A0085E882 /* SceneDelegate.swift in Sources */,
+				045EFA5727ED3B090085E882 /* HomeViewController.swift in Sources */,
+				045EFA5927ED4CB80085E882 /* SignUpViewController.swift in Sources */,
+				04B9902E27ED6F9F009AB1A0 /* SettingsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		045EFA3527ED2F5C0085E882 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				045EFA3E27ED2F5C0085E882 /* ClinkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		045EFA3F27ED2F5C0085E882 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				045EFA4A27ED2F5C0085E882 /* ClinkUITestsLaunchTests.swift in Sources */,
+				045EFA4827ED2F5C0085E882 /* ClinkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		045EFA3B27ED2F5C0085E882 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 045EFA2227ED2F5A0085E882 /* Clink */;
+			targetProxy = 045EFA3A27ED2F5C0085E882 /* PBXContainerItemProxy */;
+		};
+		045EFA4527ED2F5C0085E882 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 045EFA2227ED2F5A0085E882 /* Clink */;
+			targetProxy = 045EFA4427ED2F5C0085E882 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		045EFA2C27ED2F5A0085E882 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				045EFA2D27ED2F5A0085E882 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		045EFA3127ED2F5C0085E882 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				045EFA3227ED2F5C0085E882 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		045EFA4B27ED2F5C0085E882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		045EFA4C27ED2F5C0085E882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		045EFA4E27ED2F5C0085E882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69575ABF6B03BE61FDD29D2F /* Pods-Clink.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLGM3ZLBL6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Clink/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jackRussell.Clink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		045EFA4F27ED2F5C0085E882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05A24D6BDBAC18B2E0133B0F /* Pods-Clink.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLGM3ZLBL6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Clink/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jackRussell.Clink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		045EFA5127ED2F5C0085E882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 313F09979A50E2C74627F84F /* Pods-ClinkTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLGM3ZLBL6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jackRussell.ClinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clink.app/Clink";
+			};
+			name = Debug;
+		};
+		045EFA5227ED2F5C0085E882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E090F3C6C04CA9F0B90685F /* Pods-ClinkTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLGM3ZLBL6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jackRussell.ClinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clink.app/Clink";
+			};
+			name = Release;
+		};
+		045EFA5427ED2F5C0085E882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC31C3015991806F733D856A /* Pods-Clink-ClinkUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLGM3ZLBL6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jackRussell.ClinkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Clink;
+			};
+			name = Debug;
+		};
+		045EFA5527ED2F5C0085E882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B88745628B29ADB8596249C2 /* Pods-Clink-ClinkUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLGM3ZLBL6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jackRussell.ClinkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Clink;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		045EFA1E27ED2F5A0085E882 /* Build configuration list for PBXProject "Clink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				045EFA4B27ED2F5C0085E882 /* Debug */,
+				045EFA4C27ED2F5C0085E882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		045EFA4D27ED2F5C0085E882 /* Build configuration list for PBXNativeTarget "Clink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				045EFA4E27ED2F5C0085E882 /* Debug */,
+				045EFA4F27ED2F5C0085E882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		045EFA5027ED2F5C0085E882 /* Build configuration list for PBXNativeTarget "ClinkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				045EFA5127ED2F5C0085E882 /* Debug */,
+				045EFA5227ED2F5C0085E882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		045EFA5327ED2F5C0085E882 /* Build configuration list for PBXNativeTarget "ClinkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				045EFA5427ED2F5C0085E882 /* Debug */,
+				045EFA5527ED2F5C0085E882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 045EFA1B27ED2F5A0085E882 /* Project object */;
+}
