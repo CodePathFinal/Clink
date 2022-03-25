@@ -6,20 +6,39 @@
 //
 
 import UIKit
+import Parse
 
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var instaField: UITextField!
     @IBOutlet weak var snapField: UITextField!
+    var user = PFUser()
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        user = PFUser.current()!
+        if(user["instagram"] != nil){
+            instaField.text = (user["instagram"] as! String)
+        }
+        if(user["snap"] != nil){
+            snapField.text = (user["snap"] as! String)
+        }
+        
+        
+        
 
         // Do any additional setup after loading the view.
     }
+    
     @IBAction func onSubmit(_ sender: Any) {
+        user["snap"] = snapField.text
+        user["instagram"] = instaField.text
+        
+        user.saveInBackground()
     }
     @IBAction func onBack(_ sender: Any) {
-        self.performSegue(withIdentifier: "settingsToHomeSegue", sender: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
 

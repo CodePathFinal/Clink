@@ -36,7 +36,7 @@ class SignUpViewController: UIViewController {
     
     
     @IBAction func goBackToSignIn(_ sender: Any) {
-        self.performSegue(withIdentifier: "backToSignInSegue", sender: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*

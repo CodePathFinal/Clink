@@ -183,7 +183,6 @@
                         <outlet property="passwordField" destination="xZU-JI-7QD" id="iAQ-eH-Bmc"/>
                         <outlet property="snapField" destination="oim-sT-sxh" id="qmK-w7-fnU"/>
                         <outlet property="usernameField" destination="Snu-eQ-lAg" id="6rW-lf-Rma"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="backToSignInSegue" modalPresentationStyle="fullScreen" id="u96-Dn-JmP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdK-hj-5Zt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -302,7 +301,6 @@
                     <connections>
                         <outlet property="instaField" destination="Ar6-t4-8gD" id="4Ku-t6-nLe"/>
                         <outlet property="snapField" destination="ykb-6Q-Vl7" id="fTA-5g-C9M"/>
-                        <segue destination="4HP-MA-K7k" kind="presentation" identifier="settingsToHomeSegue" modalPresentationStyle="fullScreen" id="L6k-eK-1BW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cj4-Mz-7dv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -348,7 +346,6 @@
         <!--Navigation Controller-->
         <scene sceneID="zId-Bb-NTh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cj3-Kt-XKB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b5s-yj-brQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HRg-4f-TRZ">
@@ -360,12 +357,12 @@
                         <segue destination="eh1-Ck-kYy" kind="relationship" relationship="rootViewController" id="Xm6-fO-bNu"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cj3-Kt-XKB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="306" y="1468"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JxR-gV-wpE"/>
         <segue reference="y3h-ua-23I"/>
     </inferredMetricsTieBreakers>
     <resources>
