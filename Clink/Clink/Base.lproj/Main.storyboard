@@ -11,7 +11,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="Clink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInScreen" id="BYZ-38-t0r" customClass="SignInViewController" customModule="Clink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,7 +226,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="RgJ-tR-6Pf">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="zjo-bj-TE2"/>
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="zjo-bj-TE2">
+                            <connections>
+                                <action selector="onSignOut:" destination="Kj8-Zd-8hI" id="gnU-kn-cki"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="kcu-bE-E9U">
                             <connections>
                                 <action selector="onSettings:" destination="Kj8-Zd-8hI" id="cXA-GH-VTF"/>
@@ -361,7 +365,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="L6k-eK-1BW"/>
+        <segue reference="JxR-gV-wpE"/>
         <segue reference="y3h-ua-23I"/>
     </inferredMetricsTieBreakers>
     <resources>

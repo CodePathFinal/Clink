@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 class HomeViewController: UIViewController {
 
@@ -18,7 +19,17 @@ class HomeViewController: UIViewController {
        self.performSegue(withIdentifier: "settingsSegue", sender: nil)
     }
     
-
+    @IBAction func onSignOut(_ sender: Any) {
+        
+        PFUser.logOut()
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let signInViewController = main.instantiateViewController(identifier: "SignInScreen")
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else {return}
+        delegate.window?.rootViewController = signInViewController
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 
