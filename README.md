@@ -48,35 +48,51 @@ This app offers a way for people to create large bulk orders of drinks at bars a
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* [Login screen]
+   * User creates a login or logs into their account.
+   * On this screen the user has the option to log into their profile
+   * or create a new profile
+* [Home Screen]
+   * User has a home screen with a list of menu items
+   * The user may select to review social media profiles
+   * or user may select the clink option
+* [Social Media Linking screen]
+   * Allows user to link their social media profile.
+   * User will be able to link a Facebook, Instagram or 
+   * Twitter profile.
+* [Clink screen]
+   * User will have option to group an entire party's order
+   * as the host. 
+   * They will also have another option to select guest.
+   * This is option will add their drink order
+   * to the person that is the host.
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* [Login/Signup]
+* [Home Screen with nav controller]
+* [Shareable Social Media Links]
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* [Login/SignUp]
+   * [If user does not have an account then create account screen will pop up.]
+   * [If user already has an account they will be directed to the home screen]
+* [Home screen with navigation controller]
+   * [Social media screen that has links to the users social media profiles they wish to share]
+   * [Clink Host or clink option]
+   * [Clink host will allow you to collect all other's in your party drink order]
+   * [Clink will allow you to share your drink order with the host]
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://i.imgur.com/tOAYgDv.jpg" width=800><br>
+
 
 ### [BONUS] Digital Wireframes & Mockups
+![](https://i.imgur.com/xhPBhH2.png)
+https://www.fluidui.com/editor/live/preview/cF9LeHZWcmtWdVdndTJ3Slc5V3Y3REhsaUlvZDlvRlJyMA==
 
 ### [BONUS] Interactive Prototype
 
