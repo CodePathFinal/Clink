@@ -104,3 +104,7 @@ https://www.fluidui.com/editor/live/preview/cF9LeHZWcmtWdVdndTJ3Slc5V3Y3REhsaUlv
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+### GIFS TO SHOW PROGRESS
+![](https://github.com/CodePathFinal/Clink/blob/main/Clink/Progress%20Gifs/Milestone1.gif)
+
