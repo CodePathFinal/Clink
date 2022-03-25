@@ -28,13 +28,13 @@ This app offers a way for people to create large bulk orders of drinks at bars a
 
 **Required Must-have Stories**
 
-* User can create an account if they do not have one
-* User can log in if they already have an account 
-* User can select if they wish to act as the host of, or join a clink group
-* Include a settings screen where the user can enter links of social medias they want to share
-* when a user clinks with another user, regarless of host/join status, a screen will pop up on their respective phones sharing the links of the other persons social medias
-* after dismissing the social media screen the joined user can order a drink
-* host can see drinks on the order
+- [x] User can create an account if they do not have one
+- [x] User can log in if they already have an account 
+- [ ] User can select if they wish to act as the host of, or join a clink group
+- [x] Include a settings screen where the user can enter links of social medias they want to share
+- [ ] when a user clinks with another user, regarless of host/join status, a screen will pop up on their respective phones sharing the links of the other persons social medias
+- [ ] after dismissing the social media screen the joined user can order a drink
+- [ ] host can see drinks on the order
 
 
 
