@@ -12,11 +12,14 @@ class HomeViewController: UIViewController {
 
     
     @IBOutlet weak var hostToggle: UISwitch!
-    var isHost = false;
-    var didClink = false;
+    var user = PFUser()
+    var isHost = true;
+    @IBOutlet weak var hostStatus: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        user = PFUser.current()!
 
         // Do any additional setup after loading the view.
     }
@@ -37,19 +40,21 @@ class HomeViewController: UIViewController {
     @IBAction func isHost(_ sender: Any) {
         if(hostToggle.isOn == true){
             isHost = true;
+            user["isHost"] = [isHost]
+            hostStatus.setTitle("Host" as? String, for: .normal)
             print(isHost)
         }else{
             isHost = false;
+            user["isHost"] = [isHost]
+            hostStatus.setTitle("Join Host" as? String, for: .normal)
             print(isHost)
         }
     }
     
-    @IBAction func clinked(_ sender: Any){
-
-    }
     
-    /*
-    // MARK: - Navigation
+    
+    
+    /*    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

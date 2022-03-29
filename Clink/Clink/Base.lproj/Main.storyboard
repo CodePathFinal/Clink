@@ -197,24 +197,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPC-wW-UnB">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPC-wW-UnB" userLabel="hostStatus">
                                 <rect key="frame" x="95" y="327" width="225" height="243"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
+                                <buttonConfiguration key="configuration" style="plain" title="Host">
                                     <backgroundConfiguration key="background" cornerRadius="360">
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                     </backgroundConfiguration>
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Status">
-                                            <attributes>
-                                                <font key="NSFont" size="48" name="ComicSansMS-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                    <fontDescription key="titleFontDescription" name="ComicSansMS-Bold" family="Comic Sans MS" pointSize="27"/>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="aMr-RQ-33O" kind="presentation" animates="NO" id="2Ej-ez-ffI"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="hostToggle" translatesAutoresizingMaskIntoConstraints="NO" id="dUm-15-fnP" userLabel="hostToggle">
                                 <rect key="frame" x="184" y="598" width="49" height="31"/>
@@ -242,6 +238,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="hostStatus" destination="dPC-wW-UnB" id="sYG-Yc-Fgb"/>
                         <outlet property="hostToggle" destination="dUm-15-fnP" id="YlY-CY-btc"/>
                         <segue destination="b5s-yj-brQ" kind="presentation" identifier="settingsSegue" modalPresentationStyle="fullScreen" id="l5v-Om-01c"/>
                     </connections>
@@ -249,6 +246,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8L-aS-qap" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305.79710144927537" y="738.61607142857144"/>
+        </scene>
+        <!--DrinksTableView-->
+        <scene sceneID="skS-Dp-YtP">
+            <objects>
+                <tableViewController storyboardIdentifier="DrinksTableView" title="DrinksTableView" id="aMr-RQ-33O" customClass="DrinksTableViewControllerCell" customModule="Clink" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="BEj-Q5-5MU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DrinksTableViewCell" rowHeight="105" id="z7N-6A-zAV" userLabel="DrinksTableViewCell" customClass="DrinksTableViewCell" customModule="Clink" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="105"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z7N-6A-zAV" id="ddn-al-H9s" userLabel="Content">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drink" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eea-EL-T6s">
+                                            <rect key="frame" x="106" y="11" width="288" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XQd-RZ-sBs">
+                                            <rect key="frame" x="7" y="0.0" width="91" height="93"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snz-xU-xY2">
+                                            <rect key="frame" x="258" y="74" width="136" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Add Drink"/>
+                                            <connections>
+                                                <action selector="onAddDrinkClick:" destination="z7N-6A-zAV" eventType="touchUpInside" id="mV9-Jo-Phd"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addDrinkButton" destination="snz-xU-xY2" id="viu-nE-clr"/>
+                                    <outlet property="drinkLabel" destination="eea-EL-T6s" id="oqr-qx-BcO"/>
+                                    <outlet property="profilePic" destination="XQd-RZ-sBs" id="Gzu-Gj-URz"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aMr-RQ-33O" id="Ca9-J7-VaU"/>
+                            <outlet property="delegate" destination="aMr-RQ-33O" id="Wmc-gJ-zWs"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Kpx-gS-34C"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HGy-hd-iXL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1260.8695652173915" y="738.61607142857144"/>
         </scene>
         <!--Settings-->
         <scene sceneID="fYL-Zh-gvp">
@@ -375,6 +428,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
