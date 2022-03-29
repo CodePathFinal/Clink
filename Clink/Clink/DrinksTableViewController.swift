@@ -23,8 +23,8 @@ class DrinksTableViewController: UITableViewController {
         myRefreshControl.addTarget(self, action: #selector(loadDrinks), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+//         Uncomment the following line to preserve selection between presentations
+         self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -59,13 +59,23 @@ class DrinksTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return order.count
+        return numberOfDrinks
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DrinksTableViewCell", for: indexPath) as! DrinksTableViewCell
-    
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DrinksCell", for: indexPath) as! DrinksTableViewCell
+        
+        cell.usernameLabel.text =  "JohnDoe123"
+//When we have profile pictures added we can impliment this
+        
+//        let imageUrl = URL(string: (user["profile_image_url_https"] as? String)!)
+//        let data = try? Data(contentsOf: imageUrl!)
+//
+//        if let imageData = data{
+//            cell.profileImageView.image = UIImage(data: imageData)
+//        }
+        
         return cell
     }
     /*

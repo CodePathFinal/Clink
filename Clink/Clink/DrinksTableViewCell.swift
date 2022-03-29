@@ -12,9 +12,10 @@ class DrinksTableViewCell: UITableViewCell {
 
     
     var user = PFUser()
-    @IBOutlet weak var drinkLabel: UILabel!
-    @IBOutlet weak var profilePic: UIImageView!
-    @IBOutlet weak var addDrinkButton: UIButton!
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var drinkText: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,9 +28,9 @@ class DrinksTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func onAddDrinkClick(_ sender: Any) {
-        user["drink"] = drinkLabel.text
-        
+    
+    @IBAction func sendDrink(_ sender: Any) {
+        user["drink"] = drinkText.text
     }
     
 
