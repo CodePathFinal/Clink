@@ -10,6 +10,11 @@ import Parse
 
 class HomeViewController: UIViewController {
 
+    
+    @IBOutlet weak var hostToggle: UISwitch!
+    var isHost = false;
+    var didClink = false;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +34,19 @@ class HomeViewController: UIViewController {
         
     }
     
+    @IBAction func isHost(_ sender: Any) {
+        if(hostToggle.isOn == true){
+            isHost = true;
+            print(isHost)
+        }else{
+            isHost = false;
+            print(isHost)
+        }
+    }
+    
+    @IBAction func clinked(_ sender: Any){
+
+    }
     
     /*
     // MARK: - Navigation
