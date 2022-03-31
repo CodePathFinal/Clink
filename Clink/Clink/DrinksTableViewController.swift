@@ -21,10 +21,10 @@ class DrinksTableViewController: UITableViewController {
         super.viewDidLoad()
         loadDrinks()
         user = PFUser.current()!
-        var hostKey = user["hostKey"] as? String
-        var keyString = "Key: "
-        keyString += hostKey ?? "No Key"
-        keyTextField.text = keyString
+        let hostKey = user["hostKey"] as! String
+//        var keyString = "Key: "
+//        keyString += hostKey ?? "No Key"
+        keyTextField.text = hostKey
         
         myRefreshControl.addTarget(self, action: #selector(loadDrinks), for: .valueChanged)
         tableView.refreshControl = myRefreshControl

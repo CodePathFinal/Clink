@@ -40,12 +40,26 @@ class HomeViewController: UIViewController {
 
     @IBAction func joinOnClick(_ sender: Any) {
         var keyTest = keyTextField.text
-//        let query = PFQuery(className: "Orders")
-//        query.includeKey("hostKey")
-        if(keyTest == user["hostKey"] as? String){
-            performSegue(withIdentifier: "HostClink", sender: nil)
+        let query = PFQuery(className: "user")
+        query.includeKey("hostKey")
+        if(keyTest != ""){
+//            query.whereKey("hostKey", matchesText: keyTest!)
+            query.whereKey("hostKey", equalTo: keyTest)
+            query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+                if let error = error {
+                    // The request failed
+                    print(error.localizedDescription)
+                } else if objects != nil {
+                    self.performSegue(withIdentifier: "HostClink", sender: nil)
+                    print("Successfully found host")
+                }
+            }
+        }else{
+            print("Error: No Key provided")
         }
+            
     }
+    
     
     //Used to create a random key for the host
     func randomAlphaNumericString(length: Int) -> String {
