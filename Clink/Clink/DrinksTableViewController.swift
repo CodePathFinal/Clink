@@ -11,21 +11,26 @@ import Parse
 class DrinksTableViewController: UITableViewController {
 
     var user = PFUser()
-    var order = [PFObject]()
+//    var order = PFObject()
     var numberOfDrinks: Int!
     let myRefreshControl = UIRefreshControl()
+    @IBOutlet weak var keyTextField: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDrinks()
+        user = PFUser.current()!
+        var hostKey = user["hostKey"] as? String
+        var keyString = "Key: "
+        keyString += hostKey ?? "No Key"
+        keyTextField.text = keyString
         
         myRefreshControl.addTarget(self, action: #selector(loadDrinks), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
 
 //         Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = false
-
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
@@ -38,8 +43,8 @@ class DrinksTableViewController: UITableViewController {
     @objc func loadDrinks(){
         numberOfDrinks = 20
         let myParams = ["count": numberOfDrinks]
-        //grabbing drinks from users
-        //or sending if not host
+//        let query = PFQuery(className: "Orders")
+//        query.whereKey("hostKey", equalTo: query.hostKey as? String)
         self.tableView.reloadData()
         self.myRefreshControl.endRefreshing()
     }
@@ -65,8 +70,12 @@ class DrinksTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DrinksCell", for: indexPath) as! DrinksTableViewCell
+       //To hide the button
+//        cell.addDrinkButton.titleLabel?.textColor = UIColor.white
+//        cell.addDrinkButton.isEnabled = false
         
-        cell.usernameLabel.text =  "JohnDoe123"
+        cell.usernameLabel.text = user["username"] as? String
+       
 //When we have profile pictures added we can impliment this
         
 //        let imageUrl = URL(string: (user["profile_image_url_https"] as? String)!)
@@ -78,6 +87,12 @@ class DrinksTableViewController: UITableViewController {
         
         return cell
     }
+    
+    
+    @IBAction func backToHomeFromHost(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

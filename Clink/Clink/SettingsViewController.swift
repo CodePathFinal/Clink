@@ -34,7 +34,6 @@ class SettingsViewController: UIViewController {
     @IBAction func onSubmit(_ sender: Any) {
         user["snap"] = snapField.text
         user["instagram"] = instaField.text
-        
         user.saveInBackground()
     }
     @IBAction func onBack(_ sender: Any) {

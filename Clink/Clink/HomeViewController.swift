@@ -11,10 +11,10 @@ import Parse
 class HomeViewController: UIViewController {
 
     
-    @IBOutlet weak var hostToggle: UISwitch!
     var user = PFUser()
-    var isHost = true;
+    
     @IBOutlet weak var hostStatus: UIButton!
+    @IBOutlet weak var keyTextField: UITextField!
     
     
     override func viewDidLoad() {
@@ -37,21 +37,51 @@ class HomeViewController: UIViewController {
         
     }
     
-    @IBAction func isHost(_ sender: Any) {
-        if(hostToggle.isOn == true){
-            isHost = true;
-            user["isHost"] = [isHost]
-            hostStatus.setTitle("Host" as? String, for: .normal)
-            print(isHost)
-        }else{
-            isHost = false;
-            user["isHost"] = [isHost]
-            hostStatus.setTitle("Join Host" as? String, for: .normal)
-            print(isHost)
+
+    @IBAction func joinOnClick(_ sender: Any) {
+        var keyTest = keyTextField.text
+//        let query = PFQuery(className: "Orders")
+//        query.includeKey("hostKey")
+        if(keyTest == user["hostKey"] as? String){
+            performSegue(withIdentifier: "HostClink", sender: nil)
         }
     }
     
+    //Used to create a random key for the host
+    func randomAlphaNumericString(length: Int) -> String {
+        let allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let allowedCharsCount = UInt32(allowedChars.count)
+        var randomString = ""
+
+        for _ in 0 ..< length {
+            let randomNum = Int(arc4random_uniform(allowedCharsCount))
+            let randomIndex = allowedChars.index(allowedChars.startIndex, offsetBy: randomNum)
+            let newCharacter = allowedChars[randomIndex]
+            randomString += String(newCharacter)
+        }
+
+        return randomString
+    }
     
+    
+    @IBAction func onHostCick(_ sender: Any) {
+//        let order = PFObject(className: "Orders")
+//        order["host"] = user.username
+//        order["users"] = []
+//        order["drinks"] = []
+//        order["hostKey"] = Int.random(in: 1..<10000)
+        
+        
+        
+        let randKey = randomAlphaNumericString(length: 15)
+        user["hostKey"] = randKey
+        user.saveInBackground()
+//        selectedOrder.add(order, forKey: "Orders")
+        self.performSegue(withIdentifier: "HostClink", sender: nil)
+
+        
+        
+    }
     
     
     /*    // MARK: - Navigation

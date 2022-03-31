@@ -16,6 +16,7 @@ class DrinksTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var drinkText: UITextField!
+    @IBOutlet weak var addDrinkButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

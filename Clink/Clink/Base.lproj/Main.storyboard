@@ -209,16 +209,25 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="fS3-WX-LqM" kind="presentation" id="5Ix-2g-TdQ"/>
+                                    <action selector="onHostCick:" destination="Kj8-Zd-8hI" eventType="touchUpInside" id="egF-JI-GAU"/>
+                                    <segue destination="fS3-WX-LqM" kind="presentation" identifier="HostClink" modalPresentationStyle="fullScreen" id="3VM-na-GbA"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="hostToggle" translatesAutoresizingMaskIntoConstraints="NO" id="dUm-15-fnP" userLabel="hostToggle">
-                                <rect key="frame" x="184" y="598" width="49" height="31"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Key:" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U8y-X8-OLE">
+                                <rect key="frame" x="20" y="108" width="220" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyu-hM-m3I">
+                                <rect key="frame" x="248" y="108" width="146" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <action selector="isHost:" destination="Kj8-Zd-8hI" eventType="valueChanged" id="oRP-w9-xmU"/>
+                                    <action selector="joinOnClick:" destination="Kj8-Zd-8hI" eventType="touchUpInside" id="ut1-4M-km4"/>
                                 </connections>
-                            </switch>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mkO-5m-cDl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -239,7 +248,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="hostStatus" destination="dPC-wW-UnB" id="sYG-Yc-Fgb"/>
-                        <outlet property="hostToggle" destination="dUm-15-fnP" id="YlY-CY-btc"/>
+                        <outlet property="keyTextField" destination="U8y-X8-OLE" id="c0h-jz-92k"/>
                         <segue destination="b5s-yj-brQ" kind="presentation" identifier="settingsSegue" modalPresentationStyle="fullScreen" id="l5v-Om-01c"/>
                     </connections>
                 </viewController>
@@ -252,7 +261,7 @@
             <objects>
                 <tableViewController title="DrinksTableViewController" id="Qd2-BZ-b5q" customClass="DrinksTableViewController" customModule="Clink" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="mwu-to-yat">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -276,14 +285,6 @@
                                                 <constraint firstAttribute="width" constant="65" id="Rfn-QZ-rSQ"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRU-JI-upR">
-                                            <rect key="frame" x="326" y="92.5" width="88" height="31.5"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Add Drink"/>
-                                            <connections>
-                                                <action selector="sendDrink:" destination="xyJ-BO-MH4" eventType="touchUpInside" id="NvG-A9-Uf9"/>
-                                            </connections>
-                                        </button>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Drink" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TPR-mA-Xur">
                                             <rect key="frame" x="65" y="39.5" width="329" height="34"/>
                                             <constraints>
@@ -294,23 +295,28 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPJ-N5-H28">
+                                            <rect key="frame" x="326" y="81.5" width="88" height="31"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Add Drink"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="TPR-mA-Xur" firstAttribute="top" secondItem="wWG-NR-rTO" secondAttribute="bottom" constant="8" id="1Kn-ze-nPV"/>
+                                        <constraint firstAttribute="bottom" secondItem="MPJ-N5-H28" secondAttribute="bottom" constant="21.5" id="3gO-dI-nJY"/>
                                         <constraint firstItem="wWG-NR-rTO" firstAttribute="top" secondItem="o4t-z6-Hhw" secondAttribute="topMargin" id="3uY-5z-QPD"/>
-                                        <constraint firstAttribute="trailing" secondItem="eRU-JI-upR" secondAttribute="trailing" id="6Zl-ez-AES"/>
                                         <constraint firstItem="LEB-lt-Bc1" firstAttribute="top" secondItem="o4t-z6-Hhw" secondAttribute="top" id="92d-rl-a8S"/>
-                                        <constraint firstItem="eRU-JI-upR" firstAttribute="top" secondItem="TPR-mA-Xur" secondAttribute="bottom" constant="19" id="AeS-KQ-zJk"/>
                                         <constraint firstItem="TPR-mA-Xur" firstAttribute="trailing" secondItem="o4t-z6-Hhw" secondAttribute="trailingMargin" id="DnH-tO-P1D"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LEB-lt-Bc1" secondAttribute="bottom" constant="30" id="PvT-Cv-QHV"/>
-                                        <constraint firstItem="eRU-JI-upR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="o4t-z6-Hhw" secondAttribute="leading" constant="20" symbolic="YES" id="Ucl-mu-qr6"/>
+                                        <constraint firstItem="MPJ-N5-H28" firstAttribute="top" secondItem="TPR-mA-Xur" secondAttribute="bottom" constant="8" id="Z02-U5-UAL"/>
                                         <constraint firstItem="LEB-lt-Bc1" firstAttribute="leading" secondItem="o4t-z6-Hhw" secondAttribute="leading" id="dOz-hk-apD"/>
                                         <constraint firstItem="wWG-NR-rTO" firstAttribute="top" secondItem="o4t-z6-Hhw" secondAttribute="topMargin" id="qwk-mF-kxu"/>
                                         <constraint firstItem="wWG-NR-rTO" firstAttribute="leading" secondItem="LEB-lt-Bc1" secondAttribute="trailing" id="wtY-94-PkI"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="eRU-JI-upR" secondAttribute="bottom" constant="-1" id="yBM-ob-EQN"/>
+                                        <constraint firstAttribute="trailing" secondItem="MPJ-N5-H28" secondAttribute="trailing" id="zt4-sI-Okm"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="addDrinkButton" destination="MPJ-N5-H28" id="CLE-4r-l3f"/>
                                     <outlet property="drinkText" destination="TPR-mA-Xur" id="zjt-ET-yeU"/>
                                     <outlet property="profileImage" destination="LEB-lt-Bc1" id="Jhu-pN-ECe"/>
                                     <outlet property="usernameLabel" destination="wWG-NR-rTO" id="h3U-oR-7AO"/>
@@ -322,18 +328,34 @@
                             <outlet property="delegate" destination="Qd2-BZ-b5q" id="23M-Oe-4fl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="l6a-Mn-OHc"/>
+                    <navigationItem key="navigationItem" id="l6a-Mn-OHc" userLabel="keyIdNavbar">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="UvT-cK-oPD">
+                            <connections>
+                                <action selector="backToHomeFromHost:" destination="Qd2-BZ-b5q" id="sZw-tP-Kbc"/>
+                            </connections>
+                        </barButtonItem>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="uV8-8D-x46">
+                            <rect key="frame" x="76" y="5" width="262" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="keyTextField" destination="uV8-8D-x46" id="NYO-yp-pcE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLB-J8-RCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844.9275362318842" y="738.61607142857144"/>
+            <point key="canvasLocation" x="1913.0434782608697" y="738.61607142857144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XAQ-9c-dEf">
             <objects>
                 <navigationController id="fS3-WX-LqM" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vEF-f0-VlJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -342,7 +364,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="di4-07-wLL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1088" y="739"/>
+            <point key="canvasLocation" x="1104" y="739"/>
         </scene>
         <!--Settings-->
         <scene sceneID="fYL-Zh-gvp">
