@@ -108,3 +108,15 @@ https://www.fluidui.com/editor/live/preview/cF9LeHZWcmtWdVdndTJ3Slc5V3Y3REhsaUlv
 ### GIFS TO SHOW PROGRESS
 ![](https://github.com/CodePathFinal/Clink/blob/main/Clink/Progress%20Gifs/Milestone1.gif)
 
+### Sprint 2 GIFS
+Random Key Generated when user clicks host
+<img src="http://g.recordit.co/5JtwCAIDOg.gif"><br>
+<img src="http://g.recordit.co/omplg7vWN9.gif"><br>
+User can add drinks
+<img src="http://g.recordit.co/FlXiPm0jwJ.gif"><br>
+<img src="http://g.recordit.co/9SAqoi6jOI.gif"><br>
+On refresh it will load the added drinks to the parse server
+<img src="http://g.recordit.co/9uzfTMurSN.gif"><br>
+<img src="http://g.recordit.co/1gGLtzVPKH.gif"><br>
+Join host button will only work with a correct key
+<img src="http://g.recordit.co/Feg03UTtyh.gif"><br>
