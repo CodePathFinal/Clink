@@ -13,6 +13,9 @@ class HomeViewController: UIViewController {
     
     var user = PFUser()
     
+    var orders = [PFObject]()
+    var selectedOrder: PFObject!
+    
     @IBOutlet weak var hostStatus: UIButton!
     @IBOutlet weak var keyTextField: UITextField!
     
@@ -20,6 +23,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         user = PFUser.current()!
+        user["hostKey"] = ""
 
         // Do any additional setup after loading the view.
     }
@@ -40,18 +44,25 @@ class HomeViewController: UIViewController {
 
     @IBAction func joinOnClick(_ sender: Any) {
         var keyTest = keyTextField.text
-        let query = PFQuery(className: "user")
+        let query = PFQuery(className: "Orders")
         query.includeKey("hostKey")
         if(keyTest != ""){
-//            query.whereKey("hostKey", matchesText: keyTest!)
+//            query.whereKey("hostKey", contains: keyTest!)
             query.whereKey("hostKey", equalTo: keyTest)
-            query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+            query.findObjectsInBackground { (orders, error: Error?) in
                 if let error = error {
                     // The request failed
                     print(error.localizedDescription)
-                } else if objects != nil {
-                    self.performSegue(withIdentifier: "HostClink", sender: nil)
-                    print("Successfully found host")
+                } else if let orders = orders {
+                    for order in orders {
+                        print(order as Any)
+                        order.addUniqueObjects(from: orders, forKey: "users")
+                        order.saveInBackground()
+                        self.user["hostKey"] = keyTest
+                        self.performSegue(withIdentifier: "HostClink", sender: nil)
+                            print("Successfully found host")
+                    }
+
                 }
             }
         }else{
@@ -79,20 +90,24 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func onHostCick(_ sender: Any) {
-//        let order = PFObject(className: "Orders")
-//        order["host"] = user.username
-//        order["users"] = []
-//        order["drinks"] = []
-//        order["hostKey"] = Int.random(in: 1..<10000)
-        
-        
-        
-        let randKey = randomAlphaNumericString(length: 15)
+        let order = PFObject(className: "Orders")
+        order["hostUsername"] = user["username"]
+        order["drinks"] = []
+
+        let randKey = randomAlphaNumericString(length: 12)
+        order["hostKey"] = randKey
+        order.addUniqueObject(self.user as? PFUser, forKey: "users")
         user["hostKey"] = randKey
         user.saveInBackground()
 //        selectedOrder.add(order, forKey: "Orders")
-        self.performSegue(withIdentifier: "HostClink", sender: nil)
-
+        order.saveInBackground { (success, error) in
+            if(success){
+                print("Order array created")
+                self.performSegue(withIdentifier: "HostClink", sender: nil)
+            }else{
+                print("Error saving key! \(error)")
+            }
+        }
         
         
     }

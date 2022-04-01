@@ -285,39 +285,25 @@
                                                 <constraint firstAttribute="width" constant="65" id="Rfn-QZ-rSQ"/>
                                             </constraints>
                                         </imageView>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Drink" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TPR-mA-Xur">
-                                            <rect key="frame" x="65" y="39.5" width="329" height="34"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="329" id="1Fq-cI-AjI"/>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="OU1-l6-JUg"/>
-                                                <constraint firstAttribute="height" constant="34" id="OY3-1T-0w7"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPJ-N5-H28">
-                                            <rect key="frame" x="326" y="81.5" width="88" height="31"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Add Drink"/>
-                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drink Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RU2-M5-puB">
+                                            <rect key="frame" x="73" y="40" width="321" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="TPR-mA-Xur" firstAttribute="top" secondItem="wWG-NR-rTO" secondAttribute="bottom" constant="8" id="1Kn-ze-nPV"/>
-                                        <constraint firstAttribute="bottom" secondItem="MPJ-N5-H28" secondAttribute="bottom" constant="21.5" id="3gO-dI-nJY"/>
                                         <constraint firstItem="wWG-NR-rTO" firstAttribute="top" secondItem="o4t-z6-Hhw" secondAttribute="topMargin" id="3uY-5z-QPD"/>
                                         <constraint firstItem="LEB-lt-Bc1" firstAttribute="top" secondItem="o4t-z6-Hhw" secondAttribute="top" id="92d-rl-a8S"/>
-                                        <constraint firstItem="TPR-mA-Xur" firstAttribute="trailing" secondItem="o4t-z6-Hhw" secondAttribute="trailingMargin" id="DnH-tO-P1D"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LEB-lt-Bc1" secondAttribute="bottom" constant="30" id="PvT-Cv-QHV"/>
-                                        <constraint firstItem="MPJ-N5-H28" firstAttribute="top" secondItem="TPR-mA-Xur" secondAttribute="bottom" constant="8" id="Z02-U5-UAL"/>
                                         <constraint firstItem="LEB-lt-Bc1" firstAttribute="leading" secondItem="o4t-z6-Hhw" secondAttribute="leading" id="dOz-hk-apD"/>
                                         <constraint firstItem="wWG-NR-rTO" firstAttribute="top" secondItem="o4t-z6-Hhw" secondAttribute="topMargin" id="qwk-mF-kxu"/>
                                         <constraint firstItem="wWG-NR-rTO" firstAttribute="leading" secondItem="LEB-lt-Bc1" secondAttribute="trailing" id="wtY-94-PkI"/>
-                                        <constraint firstAttribute="trailing" secondItem="MPJ-N5-H28" secondAttribute="trailing" id="zt4-sI-Okm"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="addDrinkButton" destination="MPJ-N5-H28" id="CLE-4r-l3f"/>
-                                    <outlet property="drinkText" destination="TPR-mA-Xur" id="zjt-ET-yeU"/>
+                                    <outlet property="drinkLabel" destination="RU2-M5-puB" id="zvL-yd-Zb2"/>
                                     <outlet property="profileImage" destination="LEB-lt-Bc1" id="Jhu-pN-ECe"/>
                                     <outlet property="usernameLabel" destination="wWG-NR-rTO" id="h3U-oR-7AO"/>
                                 </connections>
@@ -336,11 +322,17 @@
                             </connections>
                         </barButtonItem>
                         <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="uV8-8D-x46">
-                            <rect key="frame" x="76" y="5" width="262" height="34"/>
+                            <rect key="frame" x="112.5" y="5" width="189" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <barButtonItem key="rightBarButtonItem" title="Add Drink" id="3kq-vZ-yrj">
+                            <connections>
+                                <action selector="addDrinkButton:" destination="Qd2-BZ-b5q" id="0Zo-3G-lZs"/>
+                                <segue destination="dlR-89-PgC" kind="presentation" id="ZeY-8p-YoC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="keyTextField" destination="uV8-8D-x46" id="NYO-yp-pcE"/>
@@ -349,6 +341,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLB-J8-RCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1913.0434782608697" y="738.61607142857144"/>
+        </scene>
+        <!--AddDrinkView-->
+        <scene sceneID="YFI-W1-kF1">
+            <objects>
+                <viewController title="AddDrinkView" id="dlR-89-PgC" userLabel="AddDrinkView" customClass="AddDrinkViewController" customModule="Clink" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iPF-ch-yMf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Drink Here:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ckH-Ti-Bsk">
+                                <rect key="frame" x="20" y="44" width="289" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHI-Je-emp">
+                                <rect key="frame" x="307" y="47" width="87" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                                <connections>
+                                    <action selector="submitDrink:" destination="dlR-89-PgC" eventType="touchUpInside" id="0ps-my-VTa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XV9-u8-Id9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="drinkTextField" destination="ckH-Ti-Bsk" id="plv-42-qdY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XoD-zS-Lt3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2824.6376811594205" y="738.61607142857144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XAQ-9c-dEf">

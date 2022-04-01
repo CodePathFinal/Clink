@@ -26,7 +26,6 @@ class SignUpViewController: UIViewController {
         user.password = passwordField.text
         user["instagram"] = instaField.text
         user["snap"] = snapField.text
-        user["hostKey"] = ""
         user.signUpInBackground { success, error in
             if success{
                 self.performSegue(withIdentifier: "createAccountSegue", sender: nil)

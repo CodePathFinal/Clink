@@ -11,23 +11,27 @@ import Parse
 class DrinksTableViewController: UITableViewController {
 
     var user = PFUser()
-//    var order = PFObject()
-    var numberOfDrinks: Int!
+    
+    var order = PFObject(className: "Orders")
+    var numberOfDrinks = 0
     let myRefreshControl = UIRefreshControl()
     @IBOutlet weak var keyTextField: UITextField!
+    var key = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadDrinks()
+        if(numberOfDrinks > 0){
+            loadDrinks()
+        }
         user = PFUser.current()!
-        let hostKey = user["hostKey"] as! String
-//        var keyString = "Key: "
-//        keyString += hostKey ?? "No Key"
+        let hostKey = user["hostKey"] as? String
         keyTextField.text = hostKey
-        
+        key = hostKey as! String
         myRefreshControl.addTarget(self, action: #selector(loadDrinks), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
+        
+        
 
 //         Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = false
@@ -41,19 +45,42 @@ class DrinksTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     @objc func loadDrinks(){
-        numberOfDrinks = 20
+        numberOfDrinks = 0
+        
         let myParams = ["count": numberOfDrinks]
-//        let query = PFQuery(className: "Orders")
-//        query.whereKey("hostKey", equalTo: query.hostKey as? String)
+        let query = PFQuery(className: "Drinks")
+        let order = PFObject(className: "Orders")
+        let drink = PFObject(className: "Drinks")
+        
+        query.includeKeys(["drink", "hostKey"])
+        query.whereKey(user["hostKey"] as! String, equalTo: order["hostKey"])
+        
+        query.findObjectsInBackground { (drinks, error: Error?) in
+            if let error = error {
+                // The request failed
+                print(error.localizedDescription)
+            } else if let drinks = drinks {
+                for drink in drinks {
+                    print(drink as Any)
+                    order.addUniqueObject(drink, forKey: "drinks")
+                    order.saveInBackground()
+                    print("Successfully found drinks")
+                }
+
+            }
+        }
         self.tableView.reloadData()
         self.myRefreshControl.endRefreshing()
     }
     
     //Still needs to be updated
     func loadMoreDrinks(){
-        numberOfDrinks += 20
+        var getSize = order["drinks"] as! [String]
+        numberOfDrinks = getSize.count
         let myParams = ["count": numberOfDrinks]
         //repeate the process in load Drinks
+        self.tableView.reloadData()
+        self.myRefreshControl.endRefreshing()
     }
     
     
@@ -70,12 +97,8 @@ class DrinksTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DrinksCell", for: indexPath) as! DrinksTableViewCell
-       //To hide the button
-//        cell.addDrinkButton.titleLabel?.textColor = UIColor.white
-//        cell.addDrinkButton.isEnabled = false
-        
         cell.usernameLabel.text = user["username"] as? String
-       
+        cell.drinkLabel.text = user["drinks"] as? String
 //When we have profile pictures added we can impliment this
         
 //        let imageUrl = URL(string: (user["profile_image_url_https"] as? String)!)
@@ -87,6 +110,12 @@ class DrinksTableViewController: UITableViewController {
         
         return cell
     }
+    
+  
+    @IBAction func addDrinkButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "AddDrinkView", sender: nil)
+    }
+    
     
     
     @IBAction func backToHomeFromHost(_ sender: Any) {

@@ -15,8 +15,7 @@ class DrinksTableViewCell: UITableViewCell {
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var drinkText: UITextField!
-    @IBOutlet weak var addDrinkButton: UIButton!
+    @IBOutlet weak var drinkLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,9 +29,6 @@ class DrinksTableViewCell: UITableViewCell {
     }
     
     
-    @IBAction func sendDrink(_ sender: Any) {
-        user["drink"] = drinkText.text
-    }
     
 
 }
