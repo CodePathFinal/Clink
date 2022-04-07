@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        user = PFUser.current()!
+//        user = PFUser.current()!
         user["hostKey"] = ""
 
         // Do any additional setup after loading the view.
@@ -90,6 +90,7 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func onHostCick(_ sender: Any) {
+        user = PFUser.current()!
         let order = PFObject(className: "Orders")
         order["hostUsername"] = user["username"]
         order["drinks"] = []

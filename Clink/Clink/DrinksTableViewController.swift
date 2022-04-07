@@ -51,9 +51,12 @@ class DrinksTableViewController: UITableViewController {
         let query = PFQuery(className: "Drinks")
         let order = PFObject(className: "Orders")
         let drink = PFObject(className: "Drinks")
+        let query2 = PFQuery(className: "Orders")
         
+        query2.includeKey("hostKey")
         query.includeKeys(["drink", "hostKey"])
         query.whereKey(user["hostKey"] as! String, equalTo: order["hostKey"])
+        query2.whereKey(user["hostKey"] as! String, equalTo:order["hostKey"])
         
         query.findObjectsInBackground { (drinks, error: Error?) in
             if let error = error {
