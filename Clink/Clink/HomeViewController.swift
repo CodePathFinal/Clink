@@ -43,6 +43,7 @@ class HomeViewController: UIViewController {
     
 
     @IBAction func joinOnClick(_ sender: Any) {
+        user = PFUser.current()!
         var keyTest = keyTextField.text
         let query = PFQuery(className: "Orders")
         query.includeKey("hostKey")
@@ -56,9 +57,10 @@ class HomeViewController: UIViewController {
                 } else if let orders = orders {
                     for order in orders {
                         print(order as Any)
+                        self.user["hostKey"] = keyTest as? String
+                        self.user.saveInBackground()
                         order.addUniqueObjects(from: orders, forKey: "users")
                         order.saveInBackground()
-                        self.user["hostKey"] = keyTest
                         self.performSegue(withIdentifier: "HostClink", sender: nil)
                             print("Successfully found host")
                     }

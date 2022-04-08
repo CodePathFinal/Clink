@@ -11,7 +11,7 @@ import Parse
 class DrinksTableViewController: UITableViewController {
 
     var user = PFUser()
-    
+    var drinksObj = [PFObject]()
     var order = PFObject(className: "Orders")
     var numberOfDrinks = 0
     let myRefreshControl = UIRefreshControl()
@@ -27,7 +27,7 @@ class DrinksTableViewController: UITableViewController {
         user = PFUser.current()!
         let hostKey = user["hostKey"] as? String
         keyTextField.text = hostKey
-        key = hostKey as! String
+        key = hostKey!
         myRefreshControl.addTarget(self, action: #selector(loadDrinks), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
         
@@ -50,13 +50,10 @@ class DrinksTableViewController: UITableViewController {
         let myParams = ["count": numberOfDrinks]
         let query = PFQuery(className: "Drinks")
         let order = PFObject(className: "Orders")
-        let drink = PFObject(className: "Drinks")
-        let query2 = PFQuery(className: "Orders")
-        
-        query2.includeKey("hostKey")
+//        let drink = PFObject(className: "Drinks")
+
         query.includeKeys(["drink", "hostKey"])
         query.whereKey(user["hostKey"] as! String, equalTo: order["hostKey"])
-        query2.whereKey(user["hostKey"] as! String, equalTo:order["hostKey"])
         
         query.findObjectsInBackground { (drinks, error: Error?) in
             if let error = error {
@@ -64,14 +61,43 @@ class DrinksTableViewController: UITableViewController {
                 print(error.localizedDescription)
             } else if let drinks = drinks {
                 for drink in drinks {
-                    print(drink as Any)
-                    order.addUniqueObject(drink, forKey: "drinks")
-                    order.saveInBackground()
-                    print("Successfully found drinks")
+                    if(drink["hostKey"] as! String == self.key){
+                        self.drinksObj += [drink]
+                        
+//                for drink in drinks {
+//                    print(drink as Any)
+//                    order.setObject(drinks, forKey: "drinks")
+//                    order.saveInBackground()
+                        print("Successfully found drinks")
+                    }
                 }
-
+//                }
+                print(self.drinksObj)
+                print("Drink Obj")
             }
         }
+        
+        let query2 = PFQuery(className: "Orders")
+        
+        query2.includeKeys(["hostKey", "drinks"])
+        query2.whereKey(user["hostKey"] as! String, equalTo:order["hostKey"])
+        query2.findObjectsInBackground{(orders, error: Error?) in
+            if let error = error {
+                // The request failed
+                print(error.localizedDescription)
+            } else if let orders = orders {
+                for order in orders {
+                    if(order["hostKey"] as! String == self.key){
+                        order["drinks"] = self.drinksObj
+                        order.saveInBackground()
+                    }
+                        
+                }
+            }else{
+                print(error?.localizedDescription)
+            }
+        }
+        
         self.tableView.reloadData()
         self.myRefreshControl.endRefreshing()
     }
@@ -122,6 +148,8 @@ class DrinksTableViewController: UITableViewController {
     
     
     @IBAction func backToHomeFromHost(_ sender: Any) {
+        self.user["hostKey"] = ""
+        self.user.saveInBackground()
         self.dismiss(animated: true, completion: nil)
     }
     
