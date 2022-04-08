@@ -120,3 +120,11 @@ On refresh it will load the added drinks to the parse server
 <img src="http://g.recordit.co/1gGLtzVPKH.gif"><br>
 Join host button will only work with a correct key
 <img src="http://g.recordit.co/Feg03UTtyh.gif"><br>
+
+### Sprint 2 Extended to Extra Week
+Ran into issues with bugs. The app was crashing when signing up to make a new account.
+The bug was fixed by moving "user = PFUser.current()!" inside a function when they click the host button.
+We have another bug with the drink order not working correctly with parse.
+We may have to find a different way to load the drink order if we can't get it to work.
+Last Sprint 3 we will solve or do a work around along with display the orders
+and then allowing the user to click on the username to view the other person's social profiles.
