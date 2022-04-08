@@ -63,15 +63,10 @@ class DrinksTableViewController: UITableViewController {
                 for drink in drinks {
                     if(drink["hostKey"] as! String == self.key){
                         self.drinksObj += [drink]
-                        
-//                for drink in drinks {
-//                    print(drink as Any)
-//                    order.setObject(drinks, forKey: "drinks")
-//                    order.saveInBackground()
+                        self.numberOfDrinks += 1
                         print("Successfully found drinks")
                     }
                 }
-//                }
                 print(self.drinksObj)
                 print("Drink Obj")
             }
@@ -90,6 +85,10 @@ class DrinksTableViewController: UITableViewController {
                     if(order["hostKey"] as! String == self.key){
                         order["drinks"] = self.drinksObj
                         order.saveInBackground()
+//                        print(order["drinks"])
+//                        print("inside of the query")
+//                        print(order["hostKey"])
+//                        print("Orders")
                     }
                         
                 }
