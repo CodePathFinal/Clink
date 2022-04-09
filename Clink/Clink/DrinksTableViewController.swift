@@ -82,7 +82,7 @@ class DrinksTableViewController: UITableViewController {
                 print(error.localizedDescription)
             } else if let orders = orders {
                 for order in orders {
-                    if(order["hostKey"] as! String == self.key){
+                    if(order["hostKey"] != nil && order["hostKey"] as! String == self.key){
                         order["drinks"] = self.drinksObj
                         order.saveInBackground()
 //                        print(order["drinks"])
