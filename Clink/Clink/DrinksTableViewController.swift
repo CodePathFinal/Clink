@@ -21,9 +21,8 @@ class DrinksTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(numberOfDrinks > 0){
-            loadDrinks()
-        }
+
+//            loadDrinks()
         user = PFUser.current()!
         let hostKey = user["hostKey"] as? String
         keyTextField.text = hostKey
@@ -40,20 +39,17 @@ class DrinksTableViewController: UITableViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        numberOfDrinks = drinksObj.count
         self.loadDrinks()
     }
     // MARK: - Table view data source
 
     @objc func loadDrinks(){
-        numberOfDrinks = 0
         
-        let myParams = ["count": numberOfDrinks]
         let query = PFQuery(className: "Drinks")
         let order = PFObject(className: "Orders")
-//        let drink = PFObject(className: "Drinks")
 
         query.includeKeys(["drink", "hostKey"])
-        query.whereKey(user["hostKey"] as! String, equalTo: order["hostKey"])
         
         query.findObjectsInBackground { (drinks, error: Error?) in
             if let error = error {
@@ -61,21 +57,18 @@ class DrinksTableViewController: UITableViewController {
                 print(error.localizedDescription)
             } else if let drinks = drinks {
                 for drink in drinks {
-                    if(drink["hostKey"] as! String == self.key){
+                    if(drink["hostKey"] as! String == self.key && !drinks.isEmpty){
                         self.drinksObj += [drink]
-                        self.numberOfDrinks += 1
                         print("Successfully found drinks")
                     }
                 }
-                print(self.drinksObj)
-                print("Drink Obj")
             }
         }
         
         let query2 = PFQuery(className: "Orders")
         
         query2.includeKeys(["hostKey", "drinks"])
-        query2.whereKey(user["hostKey"] as! String, equalTo:order["hostKey"])
+//        query2.whereKey(user["hostKey"] as! String, equalTo:order["hostKey"])
         query2.findObjectsInBackground{(orders, error: Error?) in
             if let error = error {
                 // The request failed
@@ -83,14 +76,12 @@ class DrinksTableViewController: UITableViewController {
             } else if let orders = orders {
                 for order in orders {
                     if(order["hostKey"] != nil && order["hostKey"] as! String == self.key){
-                        order["drinks"] = self.drinksObj
-                        order.saveInBackground()
-//                        print(order["drinks"])
-//                        print("inside of the query")
-//                        print(order["hostKey"])
-//                        print("Orders")
-                    }
                         
+                        order.addUniqueObjects(from: self.drinksObj, forKey: "drinks")
+                        self.numberOfDrinks = orders.count
+                        order.saveInBackground()
+                    }
+
                 }
             }else{
                 print(error?.localizedDescription)
@@ -103,9 +94,7 @@ class DrinksTableViewController: UITableViewController {
     
     //Still needs to be updated
     func loadMoreDrinks(){
-        var getSize = order["drinks"] as! [String]
-        numberOfDrinks = getSize.count
-        let myParams = ["count": numberOfDrinks]
+
         //repeate the process in load Drinks
         self.tableView.reloadData()
         self.myRefreshControl.endRefreshing()
@@ -127,14 +116,6 @@ class DrinksTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DrinksCell", for: indexPath) as! DrinksTableViewCell
         cell.usernameLabel.text = user["username"] as? String
         cell.drinkLabel.text = user["drinks"] as? String
-//When we have profile pictures added we can impliment this
-        
-//        let imageUrl = URL(string: (user["profile_image_url_https"] as? String)!)
-//        let data = try? Data(contentsOf: imageUrl!)
-//
-//        if let imageData = data{
-//            cell.profileImageView.image = UIImage(data: imageData)
-//        }
         
         return cell
     }
