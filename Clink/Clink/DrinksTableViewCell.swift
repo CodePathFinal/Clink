@@ -17,6 +17,10 @@ class DrinksTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var drinkLabel: UILabel!
     
+    @IBOutlet weak var insta: UILabel!
+    
+    @IBOutlet weak var snap: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -99,7 +99,7 @@
         <!--Sign Up-->
         <scene sceneID="5Pr-yO-hrw">
             <objects>
-                <viewController id="1Xw-aD-AqW" customClass="SignUpViewController" customModule="Clink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="1Xw-aD-AqW" customClass="SignUpViewController" customModule="Clink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nUH-wh-Eq1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,13 +136,13 @@
                                 <rect key="frame" x="20" y="144" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xZU-JI-7QD">
                                 <rect key="frame" x="20" y="218" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="new-password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Instagram" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLp-lP-epp">
                                 <rect key="frame" x="20" y="292" width="374" height="34"/>
@@ -164,7 +164,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Create Account"/>
                                 <connections>
                                     <action selector="createAccount:" destination="1Xw-aD-AqW" eventType="touchUpInside" id="jlh-dG-glf"/>
-                                    <segue destination="Kj8-Zd-8hI" kind="presentation" identifier="createAccountSegue" modalPresentationStyle="fullScreen" id="wJh-4y-rbi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -183,6 +182,7 @@
                         <outlet property="passwordField" destination="xZU-JI-7QD" id="iAQ-eH-Bmc"/>
                         <outlet property="snapField" destination="oim-sT-sxh" id="qmK-w7-fnU"/>
                         <outlet property="usernameField" destination="Snu-eQ-lAg" id="6rW-lf-Rma"/>
+                        <segue destination="4HP-MA-K7k" kind="presentation" identifier="createAccountSegue" modalPresentationStyle="fullScreen" id="JOk-Cl-o81"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdK-hj-5Zt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -201,7 +201,7 @@
                                 <rect key="frame" x="95" y="327" width="225" height="243"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Host">
+                                <buttonConfiguration key="configuration" style="plain" title="Clink">
                                     <backgroundConfiguration key="background" cornerRadius="360">
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                     </backgroundConfiguration>
@@ -223,7 +223,7 @@
                                 <rect key="frame" x="248" y="108" width="146" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Join Clink"/>
                                 <connections>
                                     <action selector="joinOnClick:" destination="Kj8-Zd-8hI" eventType="touchUpInside" id="ut1-4M-km4"/>
                                 </connections>
@@ -265,15 +265,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DrinksCell" rowHeight="134" id="xyJ-BO-MH4" userLabel="DrinksCell" customClass="DrinksTableViewCell" customModule="Clink" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="134"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DrinksCell" rowHeight="169" id="xyJ-BO-MH4" userLabel="DrinksCell" customClass="DrinksTableViewCell" customModule="Clink" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="169"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xyJ-BO-MH4" id="o4t-z6-Hhw">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="134"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="169"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWG-NR-rTO">
-                                            <rect key="frame" x="65" y="11" width="329" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWG-NR-rTO">
+                                            <rect key="frame" x="65" y="11" width="329" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -285,9 +285,20 @@
                                                 <constraint firstAttribute="width" constant="65" id="Rfn-QZ-rSQ"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drink Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RU2-M5-puB">
-                                            <rect key="frame" x="73" y="40" width="321" height="25"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RU2-M5-puB">
+                                            <rect key="frame" x="65" y="39.5" width="329" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9l0-hC-4Tt">
+                                            <rect key="frame" x="65" y="117" width="329" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rH-Mz-kic">
+                                            <rect key="frame" x="65" y="74" width="329" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -295,16 +306,34 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="wWG-NR-rTO" firstAttribute="top" secondItem="o4t-z6-Hhw" secondAttribute="topMargin" id="3uY-5z-QPD"/>
+                                        <constraint firstItem="5rH-Mz-kic" firstAttribute="top" secondItem="RU2-M5-puB" secondAttribute="bottom" constant="14" id="8Fd-x6-2ox"/>
                                         <constraint firstItem="LEB-lt-Bc1" firstAttribute="top" secondItem="o4t-z6-Hhw" secondAttribute="top" id="92d-rl-a8S"/>
+                                        <constraint firstItem="9l0-hC-4Tt" firstAttribute="top" secondItem="5rH-Mz-kic" secondAttribute="bottom" constant="22" id="G3p-Op-RVY"/>
+                                        <constraint firstItem="wWG-NR-rTO" firstAttribute="trailing" secondItem="o4t-z6-Hhw" secondAttribute="trailingMargin" id="Jww-Oa-ccG"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LEB-lt-Bc1" secondAttribute="bottom" constant="30" id="PvT-Cv-QHV"/>
+                                        <constraint firstItem="9l0-hC-4Tt" firstAttribute="top" secondItem="5rH-Mz-kic" secondAttribute="bottom" constant="22" id="QMy-Xy-lP1"/>
+                                        <constraint firstItem="wWG-NR-rTO" firstAttribute="top" secondItem="o4t-z6-Hhw" secondAttribute="topMargin" id="Tci-lb-tjd"/>
+                                        <constraint firstItem="9l0-hC-4Tt" firstAttribute="trailing" secondItem="o4t-z6-Hhw" secondAttribute="trailingMargin" id="YLt-Gn-cGo"/>
+                                        <constraint firstItem="9l0-hC-4Tt" firstAttribute="leading" secondItem="o4t-z6-Hhw" secondAttribute="leadingMargin" constant="45" id="Yyc-9n-GL7"/>
+                                        <constraint firstItem="wWG-NR-rTO" firstAttribute="leading" secondItem="LEB-lt-Bc1" secondAttribute="trailing" id="Zbw-f6-1Pc"/>
+                                        <constraint firstItem="5rH-Mz-kic" firstAttribute="leading" secondItem="o4t-z6-Hhw" secondAttribute="leadingMargin" constant="45" id="aJz-kX-FFw"/>
+                                        <constraint firstItem="RU2-M5-puB" firstAttribute="trailing" secondItem="o4t-z6-Hhw" secondAttribute="trailingMargin" id="bhs-i0-ynz"/>
+                                        <constraint firstItem="5rH-Mz-kic" firstAttribute="trailing" secondItem="o4t-z6-Hhw" secondAttribute="trailingMargin" id="btk-VV-heT"/>
                                         <constraint firstItem="LEB-lt-Bc1" firstAttribute="leading" secondItem="o4t-z6-Hhw" secondAttribute="leading" id="dOz-hk-apD"/>
+                                        <constraint firstItem="5rH-Mz-kic" firstAttribute="top" secondItem="RU2-M5-puB" secondAttribute="bottom" constant="14" id="gBf-Dj-oMq"/>
+                                        <constraint firstItem="RU2-M5-puB" firstAttribute="leading" secondItem="LEB-lt-Bc1" secondAttribute="trailing" id="jQZ-Oa-BHI"/>
+                                        <constraint firstItem="RU2-M5-puB" firstAttribute="top" secondItem="wWG-NR-rTO" secondAttribute="bottom" constant="8" symbolic="YES" id="jfr-T3-pSq"/>
+                                        <constraint firstItem="RU2-M5-puB" firstAttribute="top" secondItem="wWG-NR-rTO" secondAttribute="bottom" constant="8" symbolic="YES" id="lge-dT-IZq"/>
+                                        <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="9l0-hC-4Tt" secondAttribute="bottom" constant="20" id="mfJ-lJ-fhH"/>
                                         <constraint firstItem="wWG-NR-rTO" firstAttribute="top" secondItem="o4t-z6-Hhw" secondAttribute="topMargin" id="qwk-mF-kxu"/>
                                         <constraint firstItem="wWG-NR-rTO" firstAttribute="leading" secondItem="LEB-lt-Bc1" secondAttribute="trailing" id="wtY-94-PkI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="drinkLabel" destination="RU2-M5-puB" id="zvL-yd-Zb2"/>
+                                    <outlet property="insta" destination="5rH-Mz-kic" id="pLo-XO-rsR"/>
                                     <outlet property="profileImage" destination="LEB-lt-Bc1" id="Jhu-pN-ECe"/>
+                                    <outlet property="snap" destination="9l0-hC-4Tt" id="jie-B3-dg7"/>
                                     <outlet property="usernameLabel" destination="wWG-NR-rTO" id="h3U-oR-7AO"/>
                                 </connections>
                             </tableViewCell>
@@ -514,7 +543,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="y3h-ua-23I"/>
+        <segue reference="JxR-gV-wpE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>

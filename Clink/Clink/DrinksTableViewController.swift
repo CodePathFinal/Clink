@@ -19,6 +19,7 @@ class DrinksTableViewController: UITableViewController {
     var key = ""
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +40,7 @@ class DrinksTableViewController: UITableViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        numberOfDrinks = drinksObj.count
+        //numberOfDrinks = drinksObj.count
         self.loadDrinks()
     }
     // MARK: - Table view data source
@@ -67,7 +68,7 @@ class DrinksTableViewController: UITableViewController {
         
         let query2 = PFQuery(className: "Orders")
         
-        query2.includeKeys(["hostKey", "drinks"])
+        query2.includeKeys(["hostKey", "drinks", "drinks.username"])
 //        query2.whereKey(user["hostKey"] as! String, equalTo:order["hostKey"])
         query2.findObjectsInBackground{(orders, error: Error?) in
             if let error = error {
@@ -78,7 +79,8 @@ class DrinksTableViewController: UITableViewController {
                     if(order["hostKey"] != nil && order["hostKey"] as! String == self.key){
                         
                         order.addUniqueObjects(from: self.drinksObj, forKey: "drinks")
-                        self.numberOfDrinks = orders.count
+                        self.drinksObj = order["drinks"] as! [PFObject]
+                        self.numberOfDrinks = self.drinksObj.count
                         order.saveInBackground()
                     }
 
@@ -113,9 +115,16 @@ class DrinksTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let drink = drinksObj[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "DrinksCell", for: indexPath) as! DrinksTableViewCell
-        cell.usernameLabel.text = user["username"] as? String
-        cell.drinkLabel.text = user["drinks"] as? String
+        
+        let user = drink["username"] as! PFUser
+        print(user)
+        cell.usernameLabel.text = user.username
+        print("flag 2")
+        cell.drinkLabel.text = drink["drink"] as? String
+        cell.insta.text = drink["instagram"] as? String
+        cell.snap.text = drink["snapchat"] as? String
         
         return cell
     }
