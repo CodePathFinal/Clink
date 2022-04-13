@@ -15,6 +15,7 @@ class DrinksTableViewController: UITableViewController {
     var order = PFObject(className: "Orders")
     var numberOfDrinks = 0
     let myRefreshControl = UIRefreshControl()
+    var numberOfDrinksObj = [PFObject]()
     @IBOutlet weak var keyTextField: UITextField!
     var key = ""
     
@@ -50,7 +51,7 @@ class DrinksTableViewController: UITableViewController {
         let query = PFQuery(className: "Drinks")
         let order = PFObject(className: "Orders")
 
-        query.includeKeys(["drink", "hostKey"])
+        query.includeKeys(["drink", "hostKey", "username"])
         
         query.findObjectsInBackground { (drinks, error: Error?) in
             if let error = error {
@@ -79,8 +80,8 @@ class DrinksTableViewController: UITableViewController {
                     if(order["hostKey"] != nil && order["hostKey"] as! String == self.key){
                         
                         order.addUniqueObjects(from: self.drinksObj, forKey: "drinks")
-                        self.drinksObj = order["drinks"] as! [PFObject]
-                        self.numberOfDrinks = self.drinksObj.count
+                        self.numberOfDrinksObj = order["drinks"] as! [PFObject]
+                        self.numberOfDrinks = self.numberOfDrinksObj.count
                         order.saveInBackground()
                     }
 
@@ -115,11 +116,11 @@ class DrinksTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let drink = drinksObj[indexPath.row]
+        let drink = numberOfDrinksObj[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "DrinksCell", for: indexPath) as! DrinksTableViewCell
         
         let user = drink["username"] as! PFUser
-        print(user)
+        print("flag 1")
         cell.usernameLabel.text = user.username
         print("flag 2")
         cell.drinkLabel.text = drink["drink"] as? String
